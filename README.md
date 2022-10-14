@@ -1,4 +1,5 @@
-# Deploy ML-powered music genre classifier and deploying it on AWS using AWS Lambda, Amazon EFS and Amazon S3
+# Deploy ML-powered music genre classifier using AWS Lambda, Amazon EFS and Amazon S3
+
 Repository for deploying multiple machine learning models for inference on AWS Lambda and Amazon EFS 
 
 ## Introduction 
