@@ -49,7 +49,7 @@ $ cd my-ml-project
 2. Create a new serverless application in AWS SAM using the following command:
 
 ```
-sam init
+$ sam init
 ```
 
 Choose Custom Template Location (`Choice`: `2`) as the template source, and provide the following GitHub template location:
@@ -59,12 +59,12 @@ https://github.com/debnsuma/boa322.git
 3. Build the AWS SAM application
 
 ```
-sam build --use-container
+$ sam build --use-container
 ```
 
 4. Deploy the application
 ```
-sam deploy --guided
+$ sam deploy --guided
 ```
 5. Provide a unique `Stack Name` and `SrcBucket` name 
 
@@ -75,7 +75,7 @@ sam deploy --guided
 6. Upload the ML model
 
 ```
-aws s3 cp models.p s3://<THE BUCKET NAME YOU PROVIDED WHILE DEPLOYING THE SAM APPLICATION>
+$ aws s3 cp models.p s3://<THE BUCKET NAME YOU PROVIDED WHILE DEPLOYING THE SAM APPLICATION>
 ```
 
 7. Perform ML inference : Use POSTMAN or API GW UI for inference, use the following in the body 
