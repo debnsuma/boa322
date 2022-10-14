@@ -35,3 +35,53 @@ Now, we are going to use a single SAM deployment to deploy this, which will crea
 - __app2(ml-inference)__: The serverless application which will perform the ML Inference from the client. 
 
 ![Architecture Diagram](img/img2.png)
+
+# Steps to deploy 
+
+1. Create a project directory:
+
+```
+$ mkdir my-ml-project
+$ cd my-ml-project
+```
+
+2. Create a new serverless application in AWS SAM using the following command:
+
+```
+sam init
+```
+
+Choose Custom Template Location (`Choice`: `2`) as the template source, and provide the following GitHub template location:
+
+https://github.com/debnsuma/boa322.git
+
+3. Build the AWS SAM application
+
+```
+sam build --use-container
+```
+
+4. Deploy the application
+```
+sam deploy --guided
+```
+5. Provide a unique `Stack Name` and `SrcBucket` name 
+
+![Architecture Diagram](img/img4.png)
+
+7. Once the Application is deployed, keep a note of the API Gateway endpoint (we would need this at `Step 8` for inference)
+
+6. Upload the ML model
+
+```
+aws s3 cp models.p s3://<THE BUCKET NAME YOU PROVIDED WHILE DEPLOYING THE SAM APPLICATION>
+```
+
+7. Perform ML inference : Use POSTMAN or API GW UI for inference, use the following in the body 
+
+```
+{
+    "song_name": "blues.00099.6.wav" # Replace this with song of your choice
+}
+```
+![Architecture Diagram](img/img3.png)
