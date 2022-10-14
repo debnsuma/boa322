@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sam-app-4"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1vczkj3abfc5w"
+s3_prefix = "sam-app-4"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "SrcBucket=\"mybucket-reinvent-2022-boa-musicml-3331\""
+image_repositories = ["InferenceFunction=507922848584.dkr.ecr.us-east-1.amazonaws.com/samapp41852088e/inferencefunction7c73919drepo"]
